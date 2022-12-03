@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 func main() {
@@ -15,9 +16,21 @@ func main() {
 
 	fileScanner.Split(bufio.ScanLines)
 
-	for fileScanner.Scan() {
-		fmt.Println(fileScanner.Text())
-	}
+	maxCount := 0
+	currentCount := 0
 
+	for fileScanner.Scan() {
+		currentLineString := fileScanner.Text()
+		if currentLineString == "" {
+			if currentCount > maxCount {
+				maxCount = currentCount
+			}
+			currentCount = 0
+		} else {
+			currentLine, _ := strconv.ParseInt(currentLineString, 10, 64)
+			currentCount += int(currentLine)
+		}
+	}
+	fmt.Println(maxCount)
 	readFile.Close()
 }
