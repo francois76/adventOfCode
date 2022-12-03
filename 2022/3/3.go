@@ -2,28 +2,29 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 
 	"github.com/francois76/adventOfCode/shared"
 )
 
 func main() {
+	shared.Run(func() interface{} {
 
-	// variables
-	m := make(map[string]int)
+		// variables
+		m := make(map[string]int)
 
-	// Populate the map with keys and values
-	for i, ch := range "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" {
-		m[string(ch)+string(ch)] = i + 1
-	}
+		// Populate the map with keys and values
+		for i, ch := range "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" {
+			m[string(ch)+string(ch)] = i + 1
+		}
 
-	totalCount := 0
+		totalCount := 0
 
-	shared.Open("3.txt", func(fileScanner *bufio.Scanner) {
-		totalCount += getCommonChar(m, fileScanner.Text())
+		shared.Open("3.txt", func(fileScanner *bufio.Scanner) {
+			totalCount += getCommonChar(m, fileScanner.Text())
+		})
+
+		return totalCount
 	})
-
-	fmt.Println(totalCount)
 }
 
 func getCommonChar(m map[string]int, line string) int {

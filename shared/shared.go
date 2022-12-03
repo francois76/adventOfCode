@@ -2,6 +2,7 @@ package shared
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -16,4 +17,9 @@ func Open(file string, f func(fileScanner *bufio.Scanner)) {
 		f(fileScanner)
 	}
 	readFile.Close()
+}
+
+func Run(f func() interface{}) {
+	result := f()
+	fmt.Println(fmt.Sprint("The result is : ", result))
 }
