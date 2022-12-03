@@ -3,17 +3,11 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"os"
+
+	"github.com/francois76/adventOfCode/shared"
 )
 
 func main() {
-	readFile, err := os.Open("3.txt")
-	if err != nil {
-		fmt.Println(err)
-	}
-	fileScanner := bufio.NewScanner(readFile)
-
-	fileScanner.Split(bufio.ScanLines)
 
 	// variables
 	m := make(map[string]int)
@@ -25,12 +19,11 @@ func main() {
 
 	totalCount := 0
 
-	// loop
-	for fileScanner.Scan() {
+	shared.Open("3.txt", func(fileScanner *bufio.Scanner) {
 		totalCount += getCommonChar(m, fileScanner.Text())
-	}
+	})
+
 	fmt.Println(totalCount)
-	readFile.Close()
 }
 
 func getCommonChar(m map[string]int, line string) int {

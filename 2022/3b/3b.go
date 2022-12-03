@@ -19,14 +19,11 @@ func main() {
 
 	totalCount := 0
 	shared.Open("../3/3.txt", func(fileScanner *bufio.Scanner) {
-		for fileScanner.Scan() {
-			firstPart := fileScanner.Text()
-			fileScanner.Scan()
-			secondPart := fileScanner.Text()
-			fileScanner.Scan()
-			totalCount += getCommonChar(m, firstPart, secondPart, fileScanner.Text())
-
-		}
+		firstPart := fileScanner.Text()
+		fileScanner.Scan()
+		secondPart := fileScanner.Text()
+		fileScanner.Scan()
+		totalCount += getCommonChar(m, firstPart, secondPart, fileScanner.Text())
 	})
 	fmt.Println(totalCount)
 }

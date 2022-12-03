@@ -3,17 +3,11 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"os"
+
+	"github.com/francois76/adventOfCode/shared"
 )
 
 func main() {
-	readFile, err := os.Open("2.txt")
-	if err != nil {
-		fmt.Println(err)
-	}
-	fileScanner := bufio.NewScanner(readFile)
-
-	fileScanner.Split(bufio.ScanLines)
 
 	maxCount := 0
 
@@ -39,9 +33,8 @@ func main() {
 		"C Z": 3 + 3, // draw +3
 	}
 
-	for fileScanner.Scan() {
+	shared.Open("2.txt", func(fileScanner *bufio.Scanner) {
 		maxCount += mapResult[fileScanner.Text()]
-	}
+	})
 	fmt.Println(maxCount)
-	readFile.Close()
 }

@@ -3,18 +3,11 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"os"
+
+	"github.com/francois76/adventOfCode/shared"
 )
 
 func main() {
-	readFile, err := os.Open("../2/2.txt")
-	if err != nil {
-		fmt.Println(err)
-	}
-	fileScanner := bufio.NewScanner(readFile)
-
-	fileScanner.Split(bufio.ScanLines)
-
 	maxCount := 0
 
 	// X for lose, Y for draw, and Z for win
@@ -39,9 +32,9 @@ func main() {
 		"C Z": 6 + 1, // win + rock
 	}
 
-	for fileScanner.Scan() {
+	shared.Open("../2/2.txt", func(fileScanner *bufio.Scanner) {
 		maxCount += mapResult[fileScanner.Text()]
-	}
+	})
+
 	fmt.Println(maxCount)
-	readFile.Close()
 }
