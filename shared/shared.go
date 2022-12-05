@@ -14,6 +14,12 @@ func Open(file string, f func(fileScanner *bufio.Scanner)) {
 	fileScanner := bufio.NewScanner(readFile)
 	fileScanner.Split(bufio.ScanLines)
 	for fileScanner.Scan() {
+		defer func() {
+			if r := recover(); r != nil {
+				fmt.Println(r)
+				return
+			}
+		}()
 		f(fileScanner)
 	}
 	readFile.Close()
