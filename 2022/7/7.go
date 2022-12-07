@@ -46,7 +46,6 @@ func (f *folder) size() int64 {
 }
 
 func (f *folder) cd(subFolderLine string) {
-	fmt.Println("changing subfolder")
 	if subFolderLine == "$ cd .." {
 		currentFolder = currentFolder.parentFolder
 		return
