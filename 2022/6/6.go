@@ -18,7 +18,6 @@ func main() {
 			for _, letter := range currentFrame {
 				set[letter] = true
 			}
-			fmt.Println(set)
 			if len(set) == 4 {
 				fmt.Println(idx + 4)
 				return
