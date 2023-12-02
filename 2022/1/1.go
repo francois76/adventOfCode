@@ -2,12 +2,28 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"strconv"
 
 	"github.com/francois76/adventOfCode/shared"
 )
 
+type color string
+
+const yellow color = "yellow"
+const blue color = "yellow"
+const red color = "red"
+
 func main() {
+	var c color
+	switch c {
+	case yellow:
+		fmt.Println("yellow")
+	case red:
+		fmt.Println("red")
+	default:
+		fmt.Println("other color")
+	}
 	shared.Run(func() interface{} {
 		maxCount := 0
 		currentCount := 0
