@@ -1,6 +1,6 @@
 module github.com/francois76/adventOfCode
 
-go 1.21
+go 1.22
 
 require github.com/samber/lo v1.38.1
 
