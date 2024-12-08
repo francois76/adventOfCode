@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"runtime/debug"
 )
 
 func Open(file string, f func(fileScanner *bufio.Scanner)) {
@@ -17,6 +18,7 @@ func Open(file string, f func(fileScanner *bufio.Scanner)) {
 		defer func() {
 			if r := recover(); r != nil {
 				fmt.Println(r)
+				fmt.Println(string(debug.Stack()))
 				return
 			}
 		}()
