@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"slices"
 	"strconv"
 	"strings"
@@ -12,12 +13,9 @@ import (
 
 func main() {
 	shared.Run(func() interface{} {
-		parseInt := func(s string) int64 {
-			i, _ := strconv.ParseInt(s, 10, 64)
-			return i
-		}
+
 		total := int64(0)
-		shared.Open("7.txt", func(fileScanner *bufio.Scanner) {
+		shared.Open("../7/7.txt", func(fileScanner *bufio.Scanner) {
 			currentLineParts := strings.Split(fileScanner.Text(), ": ")
 			totalToFind := parseInt(currentLineParts[0])
 			items := lo.Map(strings.Split(currentLineParts[1], " "), func(item string, _ int) int64 {
@@ -49,8 +47,16 @@ func nextLayer(layer []int64, value int64) []int64 {
 	for _, item := range layer {
 		result = append(result, item+value)
 		result = append(result, item*value)
+		result = append(result, concatenate(item, value))
 	}
 	return result
 }
 
+func parseInt(s string) int64 {
+	i, _ := strconv.ParseInt(s, 10, 64)
+	return i
+}
 
+func concatenate(a, b int64) int64 {
+	return parseInt(fmt.Sprintf("%d%d", a, b))
+}
