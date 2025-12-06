@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		val := int64(50)
 		count := int64(0)
 

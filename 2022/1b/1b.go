@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		maxCount := make([]int, 3)
 		currentCount := 0
 

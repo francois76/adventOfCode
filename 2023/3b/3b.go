@@ -46,7 +46,7 @@ func (n *node) value() int64 {
 
 func main() {
 
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		total := int64(0)
 		currentLine := 0
 		var previousElement *node = nil

@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		var stones []int64
 		shared.Open("11.txt", func(fileScanner *bufio.Scanner) {
 			stones = lo.Map(strings.Split(fileScanner.Text(), " "), func(item string, _ int) int64 {

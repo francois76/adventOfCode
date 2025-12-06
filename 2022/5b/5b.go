@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		stacks := map[int64][]string{}
 		shared.Open("../5/5_init.txt", func(fileScanner *bufio.Scanner) {
 			rawLine := fileScanner.Text()

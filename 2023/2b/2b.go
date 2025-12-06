@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 
 		total := int64(0)
 		lineRegex, _ := regexp.Compile(`(?m)Game (\d+):(.+)`)

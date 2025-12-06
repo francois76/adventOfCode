@@ -34,7 +34,7 @@ func main() {
 		return parseInt(input[len(input)/2])
 	}
 	counter := int64(0)
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		shared.Open("5.txt", func(fileScanner *bufio.Scanner) {
 			line := fileScanner.Text()
 			if strings.Contains(line, "|") {

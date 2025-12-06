@@ -14,7 +14,7 @@ func main() {
 	scoresToBid := map[int64]int64{}
 	scoreToHand := map[int64]string{}
 	result := int64(0)
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		shared.Open("7.txt", func(fileScanner *bufio.Scanner) {
 			currentLineString := fileScanner.Text()
 			elementsOnCurrentLine := strings.Split(currentLineString, " ")

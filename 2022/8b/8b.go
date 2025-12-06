@@ -62,7 +62,7 @@ func (t *tree) scenicScore() int64 {
 }
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		grid := map[int]map[int]*tree{}
 		grid[-1] = map[int]*tree{}
 		row := 0

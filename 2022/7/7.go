@@ -79,7 +79,7 @@ func (f *folder) listFile(fileLine string) {
 }
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 
 		shared.Open("7.txt", func(fileScanner *bufio.Scanner) {
 			line := fileScanner.Text()

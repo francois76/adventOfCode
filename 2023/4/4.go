@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		count := int64(0)
 
 		shared.Open("4.txt", func(fileScanner *bufio.Scanner) {

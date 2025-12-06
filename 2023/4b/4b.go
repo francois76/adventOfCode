@@ -15,7 +15,7 @@ func main() {
 	for i := int64(1); i <= 213; i++ {
 		gottenCard[i] = 0
 	}
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 
 		shared.Open("../4/4.txt", func(fileScanner *bufio.Scanner) {
 			currentLineString := fileScanner.Text()

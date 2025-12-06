@@ -24,7 +24,7 @@ func main() {
 	 |
 	 X
 	*/
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		total := int64(0)
 		idx := 0
 		grid := [][]letter{}

@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		count := int64(0)
 		left := []int64{}
 		right := []int64{}

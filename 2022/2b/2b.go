@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		maxCount := 0
 
 		// X for lose, Y for draw, and Z for win

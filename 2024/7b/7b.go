@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 
 		total := int64(0)
 		shared.Open("../7/7.txt", func(fileScanner *bufio.Scanner) {

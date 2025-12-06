@@ -27,7 +27,7 @@ func (p *position) String() string {
 func main() {
 	tail := position{0, 0, true}
 	head := position{0, 0, true}
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		positions := map[string]bool{}
 
 		shared.Open("9.txt", func(fileScanner *bufio.Scanner) {

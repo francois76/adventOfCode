@@ -40,7 +40,7 @@ func buildRange(input string) []rangeStruct {
 
 func main() {
 	minPlace := int64(999999999999999999)
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		for _, seed := range seeds {
 			currentValue := seed
 			for i := 0; i <= 6; i++ {

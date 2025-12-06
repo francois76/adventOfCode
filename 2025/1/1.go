@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		dial := int64(50)
 		count := 0
 

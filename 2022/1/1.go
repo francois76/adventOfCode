@@ -24,7 +24,7 @@ func main() {
 	default:
 		fmt.Println("other color")
 	}
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		maxCount := 0
 		currentCount := 0
 

@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		grid := grid{}
 		idx := 0
 		shared.Open("../10/10.txt", func(fileScanner *bufio.Scanner) {

@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		parseInt := func(s string) int64 {
 			i, _ := strconv.ParseInt(s, 10, 64)
 			return i

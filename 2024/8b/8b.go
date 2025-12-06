@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		idx := 0
 		grid := grid{}
 		nodesByFrequency := map[string][]*Node{}

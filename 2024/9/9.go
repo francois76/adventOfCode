@@ -11,7 +11,7 @@ import (
 
 func main() {
 	items := []string{}
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		shared.Open("9.txt", func(fileScanner *bufio.Scanner) {
 			line := fileScanner.Text()
 			index := 0

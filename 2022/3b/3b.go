@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 
 		// variables
 		m := make(map[string]int)

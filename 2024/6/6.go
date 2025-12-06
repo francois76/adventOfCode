@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		grid := grid{}
 		var player *Player
 		idx := 0

@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		count := 0
 		shared.Open("../4/4.txt", func(fileScanner *bufio.Scanner) {
 			count += hasOneFullyContains(fileScanner.Text())

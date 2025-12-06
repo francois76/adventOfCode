@@ -15,7 +15,7 @@ func main() {
 		i, _ := strconv.ParseInt(s, 10, 64)
 		return i
 	}
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		total := int64(0)
 		enabled := true
 		shared.Open("../3/3.txt", func(fileScanner *bufio.Scanner) {

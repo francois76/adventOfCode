@@ -12,7 +12,7 @@ import (
 func main() {
 	twoDigitsMatcher, _ := regexp.Compile(`(?m)\D*(\d).*(\d)\D*`)
 	oneDigitsMatcher, _ := regexp.Compile(`(?m)\D*(\d)\D*`)
-	shared.Run(func() interface{} {
+	shared.Run(func() any {
 		count := int64(0)
 
 		shared.Open("../1/1.txt", func(fileScanner *bufio.Scanner) {

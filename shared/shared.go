@@ -27,7 +27,7 @@ func Open(file string, f func(fileScanner *bufio.Scanner)) {
 	readFile.Close()
 }
 
-func Run(f func() interface{}) {
+func Run(f func() any) {
 	result := f()
 	fmt.Println(fmt.Sprint("The result is : ", result))
 }
