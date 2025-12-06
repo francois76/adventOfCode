@@ -1,7 +1,7 @@
 module github.com/francois76/adventOfCode
 
-go 1.23
+go 1.25
 
-require github.com/samber/lo v1.38.1
+require github.com/samber/lo v1.52.0
 
-require golang.org/x/exp v0.0.0-20220303212507-bbda1eaf7a17 // indirect
+require golang.org/x/text v0.22.0 // indirect
