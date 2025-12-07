@@ -48,8 +48,12 @@ func (n *node) isAccessible(position string) bool {
 	if val, ok := allElements[fmt.Sprintf("%d-%d", x+1, y+1)]; ok && val.isSymbol {
 		count++
 	}
+	if count < 4 {
+		n.isSymbol = false
+		return true
+	}
 
-	return count < 4
+	return false
 }
 
 func main() {
@@ -58,7 +62,7 @@ func main() {
 		total := int64(0)
 		currentLine := 0
 
-		shared.Open("4.txt", func(fileScanner *bufio.Scanner) {
+		shared.Open("../4/4.txt", func(fileScanner *bufio.Scanner) {
 			currentLineString := fileScanner.Text()
 			elementsOnCurrentLine := strings.Split(currentLineString, "")
 			for idx, element := range elementsOnCurrentLine {
@@ -75,12 +79,16 @@ func main() {
 			}
 			currentLine++
 		})
-		for key, element := range allElements {
-			if element.isAccessible(key) {
-				total++
+
+		for {
+			for key, element := range allElements {
+				if element.isAccessible(key) {
+					total++
+				}
 			}
+			fmt.Println(total)
 		}
-		return total
+
 	})
 
 }
